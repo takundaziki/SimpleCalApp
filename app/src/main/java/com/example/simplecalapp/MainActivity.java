@@ -28,15 +28,18 @@ public class MainActivity extends AppCompatActivity {
     private DailyFragment dailyFragment;
     private WeeklyFragment weeklyFragment;
 
-    private static int day = Calendar.getInstance().get(Calendar.DAY_OF_WEEK) - 1;
+    private static int day;
 
-    private static DayCalorie[] dayCalorie = {new DayCalorie(), new DayCalorie(), new DayCalorie(), new DayCalorie(), new DayCalorie(), new DayCalorie(), new DayCalorie()};
+    private static DayCalorie[] dayCalorie;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setContentView(R.layout.activity_main);
+
+        day = Calendar.getInstance().get(Calendar.DAY_OF_WEEK) - 1;
+        dayCalorie = {new DayCalorie(), new DayCalorie(), new DayCalorie(), new DayCalorie(), new DayCalorie(), new DayCalorie(), new DayCalorie()};
 
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(getNameOfWeek(day));
